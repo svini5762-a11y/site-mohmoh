@@ -224,6 +224,31 @@ section{min-height:100vh;display:flex;flex-direction:column;
   .stats-row{flex-direction:column}
   .film-row{gap:2px}
 }
+/* --- AJUSTES FINAIS PARA MOBILE E CLIQUES --- */
+
+/* 1. Aumentar o tamanho das imagens no celular */
+/* Tenta pegar as imagens dentro das classes mais comuns de galerias */
+.foto img, .quadro img, .galeria img, .memorias img, .fotos img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: cover;
+}
+
+/* Se as fotos forem "quadros" (divs) em vez de tags <img> diretas */
+.foto, .quadro, .galeria > div, .memorias > div {
+    width: 45% !important; /* Faz caber 2 fotos por linha no celular */
+    min-height: 150px !important; /* Garante que fiquem grandinhas */
+    margin: 10px !important;
+    display: inline-block !important;
+}
+
+/* 2. Desativar o clique (para não ficar abrindo a pasta para adicionar mais) */
+.foto, .quadro, .galeria img, .memorias img, .fotos img {
+    pointer-events: none !important; /* Isso "tranca" o clique na imagem */
+    cursor: default !important;
+}
+  
 </style>
 </head>
 <body>
